@@ -1,0 +1,20 @@
+extends:
+  - airbnb-base
+  - plugin:jest/recommended
+plugins:
+  - node
+  - import
+  - jest
+rules:
+  arrow-body-style: 0
+  max-len: [0, 150, 2]
+  no-underscore-dangle: 0
+  no-restricted-syntax: 0
+  no-await-in-loop: 0
+  prefer-arrow-callback: 0
+  camelcase: 0
+globals:
+  __: true
+env:
+  node: true
+  jest/globals: true
