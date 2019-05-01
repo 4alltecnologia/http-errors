@@ -10,7 +10,7 @@ const CustomError = require('../CustomError');
  * @extends import('../CustomError')
  */
 
-class UnauthorizaedError extends CustomError {
+class UnauthorizedError extends CustomError {
   /**
    * Creates an Internal Server Error
    * @param {UnauthorizedErrorMessage} message Error message
@@ -21,4 +21,4 @@ class UnauthorizaedError extends CustomError {
   }
 }
 
-module.exports = UnauthorizaedError;
+module.exports = UnauthorizedError;
