@@ -1,13 +1,12 @@
 {
-  "name": "errors",
-  "version": "0.1.0",
+  "name": "custom-http-errors",
+  "version": "1.0.0",
   "description": "An error module to standarize error usage inside a project",
   "main": "index.js",
   "scripts": {
     "test": "npm run lint && jest",
     "test:unit": "jest",
-    "test:integration": "jest",
-    "lint": "eslint src",
+    "lint": "eslint index.js errors/",
     "cover": "jest --coverage"
   },
   "author": "Ariel R. Ril",
