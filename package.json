@@ -1,5 +1,5 @@
 {
-  "name": "custom-http-errors",
+  "name": "@4alltecnologia/http-errors",
   "version": "1.0.0",
   "description": "An error module to standarize error usage inside a project",
   "main": "index.js",
@@ -8,6 +8,10 @@
     "test:unit": "jest",
     "lint": "eslint index.js errors/",
     "cover": "jest --coverage"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
   },
   "author": "Ariel R. Ril",
   "license": "ISC",
