@@ -18,10 +18,10 @@
     "coverageDirectory": "./coverage/",
     "collectCoverage": true
   },
-  "author": {
-    "name": "Ariel R. Ril",
-    "email": "ariel.ril@4all.com",
-    "url": "https://github.com/arielril"
+  "author": "4All Tecnologia",
+  "bugs": {
+    "url": "https://github.com/4alltecnologia/http-errors/issues",
+    "email": "ariel.ril@4all.com"
   },
   "license": "ISC",
   "dependencies": {
