@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Ongoing Changes
 
 
+## [1.0.4]
+### Fixed
+- Fixed tests of Unauthorized error to test the right name of the class
+
 ## [1.0.3]
 ### Added
 - JSDoc type for errors, extending the Custom Error definition
