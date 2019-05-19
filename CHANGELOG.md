@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Ongoing Changes
+
+
+## [1.0.5]
 ### Changed
 - Changes the way that the errors and Custom Error are exported by the `module.exports`
 
