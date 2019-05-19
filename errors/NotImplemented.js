@@ -4,7 +4,7 @@ const CustomError = require('../CustomError');
 /** @typedef {import('../CustomError').ErrorMessage} NotImplementedMessage Error message */
 
 /**
- * @typedef NotImplemented
+ * @typedef {import('../CustomError').CustomError} NotImplemented
  * @param {NotImplementedCode} code Internal server error code
  * @param {NotImplementedMessage} message Internal server error message
  * @extends import('../CustomError')
@@ -14,7 +14,7 @@ class NotImplemented extends CustomError {
   /**
      * Creates an Internal Server Error
      * @param {NotImplementedMessage} message Error message
-     * @returns {{ message: NotImplementedMessage, code: NotImplementedCode }}
+     * @returns {NotImplemented}
      */
   constructor(message) {
     super('NOT_IMPLEMENTED', message);

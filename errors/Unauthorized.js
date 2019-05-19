@@ -1,25 +1,25 @@
 const CustomError = require('../CustomError');
 
-/** @typedef {'UNAUTHORIZED'} UnauthorizaedErrorCode Error code */
-/** @typedef {import('../CustomError').ErrorMessage} UnauthorizaedErrorMessage Error message */
+/** @typedef {'UNAUTHORIZED'} UnauthorizedErrorCode Error code */
+/** @typedef {import('../CustomError').ErrorMessage} UnauthorizedErrorMessage Error message */
 
 /**
- * @typedef UnauthorizaedError
- * @param {UnauthorizaedErrorCode} code Internal server error code
- * @param {UnauthorizaedErrorMessage} message Internal server error message
+ * @typedef {import('../CustomError').CustomError} Unauthorized
+ * @param {UnauthorizedErrorCode} code Internal server error code
+ * @param {UnauthorizedErrorMessage} message Internal server error message
  * @extends import('../CustomError')
  */
 
-class UnauthorizedError extends CustomError {
+class Unauthorized extends CustomError {
   /**
    * Creates an Internal Server Error
    * @param {UnauthorizedErrorMessage} message Error message
-   * @returns {{ message: UnauthorizedErrorMessage, code: UnauthorizedErrorCode }}
+   * @returns {Unauthorized}
    */
   constructor(message) {
     super('UNAUTHORIZED', message);
   }
 }
 
-/** @exports UnauthorizaedError */
-module.exports = UnauthorizedError;
+/** @exports Unauthorized */
+module.exports = Unauthorized;

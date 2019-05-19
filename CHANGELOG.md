@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Ongoing Changes
 
 
+## [1.0.3]
+### Added
+- JSDoc type for errors, extending the Custom Error definition
+
 ## [1.0.2]
 ### Added
 - Added toJSON function in CustomError to creates an object with code and message of the error
