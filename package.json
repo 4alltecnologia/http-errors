@@ -1,6 +1,6 @@
 {
   "name": "@4alltecnologia/http-errors",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An error module to standarize error usage inside a project",
   "main": "index.js",
   "homepage": "https://github.com/4alltecnologia/http-errors",
