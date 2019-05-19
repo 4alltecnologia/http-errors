@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
+## [1.0.1]
+### Added
+- Export JSDoc notation for the errors and CustomError file
+- Readme and contributing files, with examples
 
 ## [1.0.0]
 ### Added
