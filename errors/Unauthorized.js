@@ -21,4 +21,5 @@ class UnauthorizedError extends CustomError {
   }
 }
 
+/** @exports UnauthorizaedError */
 module.exports = UnauthorizedError;

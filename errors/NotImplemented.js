@@ -21,4 +21,5 @@ class NotImplemented extends CustomError {
   }
 }
 
+/** @exports NotImplemented */
 module.exports = NotImplemented;

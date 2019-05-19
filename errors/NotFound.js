@@ -21,4 +21,5 @@ class NotFound extends CustomError {
   }
 }
 
+/** @exports NotFound */
 module.exports = NotFound;

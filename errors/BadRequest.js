@@ -21,4 +21,5 @@ class BadRequest extends CustomError {
   }
 }
 
+/** @exports BadRequest */
 module.exports = BadRequest;

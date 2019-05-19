@@ -1,6 +1,12 @@
 /** @typedef {String} ErrorCode Error code */
 /** @typedef {String} ErrorMessage Error message */
 
+/**
+ * @typedef {Error} CustomError
+ * @param {ErrorCode} code
+ * @param {ErrorMessage} message
+ */
+
 class CustomError extends Error {
   /**
    * Creates a custom error
@@ -13,4 +19,5 @@ class CustomError extends Error {
   }
 }
 
+/** @exports CustomError */
 module.exports = CustomError;

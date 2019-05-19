@@ -21,4 +21,5 @@ class InternalServerError extends CustomError {
   }
 }
 
+/** @exports InternalServerError */
 module.exports = InternalServerError;
