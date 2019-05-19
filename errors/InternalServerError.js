@@ -4,10 +4,9 @@ const CustomError = require('../CustomError');
 /** @typedef {import('../CustomError').ErrorMessage} InternalServerErrorMessage Error message */
 
 /**
- * @typedef {import('../CustomError').CustomError} InternalServerError
+ * @typedef {import('../CustomError')} InternalServerError
  * @param {InternalServerErrorCode} code Internal server error code
  * @param {InternalServerErrorMessage} message Internal server error message
- * @extends import('../CustomError')
  */
 
 class InternalServerError extends CustomError {
@@ -21,5 +20,4 @@ class InternalServerError extends CustomError {
   }
 }
 
-/** @exports InternalServerError */
 module.exports = InternalServerError;

@@ -4,10 +4,9 @@ const CustomError = require('../CustomError');
 /** @typedef {import('../CustomError').ErrorMessage} UnauthorizedErrorMessage Error message */
 
 /**
- * @typedef {import('../CustomError').CustomError} Unauthorized
+ * @typedef {import('../CustomError')} Unauthorized
  * @param {UnauthorizedErrorCode} code Internal server error code
  * @param {UnauthorizedErrorMessage} message Internal server error message
- * @extends import('../CustomError')
  */
 
 class Unauthorized extends CustomError {
@@ -21,5 +20,4 @@ class Unauthorized extends CustomError {
   }
 }
 
-/** @exports Unauthorized */
 module.exports = Unauthorized;
