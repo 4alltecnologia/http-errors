@@ -17,6 +17,16 @@ class CustomError extends Error {
     super(message || code);
     this.code = code;
   }
+
+  /**
+   * @returns {{ message: ErrorMessage, code: ErrorCode }}
+   */
+  toJSON() {
+    return {
+      message: this.message,
+      code: this.code,
+    };
+  }
 }
 
 /** @exports CustomError */

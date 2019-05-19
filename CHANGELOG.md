@@ -5,8 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Ongoing Changes
-
-
+### Added
+- Added toJSON function in CustomError to creates an object with code and message of the error
 
 ## [1.0.1]
 ### Added

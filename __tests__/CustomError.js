@@ -30,4 +30,24 @@ describe('Custom Error tests', () => {
       expect(cErr.code).toBeUndefined();
     }
   });
+
+  it('Should create a custom error and create an object with code and message', () => {
+    const message = random.string(20);
+    const err = new CustomError(message);
+    expect(err).toBeDefined();
+    expect(err).toBeInstanceOf(Error);
+    expect(err).toBeInstanceOf(CustomError);
+    expect(err.message).toBeDefined();
+    expect(err.message).toBe(message);
+    expect(err.code).toBeDefined();
+    expect(err.code).toBe(message);
+
+    const jsonErr = err.toJSON();
+    expect(jsonErr).toBeDefined();
+    expect(jsonErr).toBeInstanceOf(Object);
+    expect(jsonErr.message).toBeDefined();
+    expect(jsonErr.message).toBe(message);
+    expect(jsonErr.code).toBeDefined();
+    expect(jsonErr.code).toBe(message);
+  });
 });
