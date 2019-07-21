@@ -5,4 +5,5 @@ module.exports = {
   NotFound: require('./NotFound'),
   NotImplemented: require('./NotImplemented'),
   Unauthorized: require('./Unauthorized'),
+  UnprocessableEntity: require('./UnprocessableEntity'),
 };

@@ -12,7 +12,7 @@ describe('Internal Server Error tests', () => {
     expect(InternalServerError.name).toBe('InternalServerError');
   });
 
-  it('Should create a Internal Server Error (no massage)', () => {
+  it('Should create a Internal Server Error (no message)', () => {
     const err = new InternalServerError();
     expect(err).toBeDefined();
     expect(err).toBeInstanceOf(Error);
@@ -23,7 +23,7 @@ describe('Internal Server Error tests', () => {
     expect(R.whereEq(schema, err)).toBe(true);
   });
 
-  it('Should create a Internal Server Error (with massage)', () => {
+  it('Should create a Internal Server Error (with message)', () => {
     const msg = rnd.string(20);
     const err = new InternalServerError(msg);
     expect(err).toBeDefined();
@@ -31,6 +31,33 @@ describe('Internal Server Error tests', () => {
     const schema = {
       code: 'INTERNAL_SERVER_ERROR',
       message: msg,
+    };
+    expect(R.whereEq(schema, err)).toBe(true);
+  });
+
+  it('Should create a Internal Server Error (with added details)', () => {
+    const msg = rnd.string(20);
+    const err = new InternalServerError(msg);
+    err.addDetail(new InternalServerError('added detail'));
+    expect(err).toBeDefined();
+    expect(err).toBeInstanceOf(Error);
+    const schema = {
+      code: 'INTERNAL_SERVER_ERROR',
+      message: msg,
+      details: [(new InternalServerError('added detail')).toJSON()],
+    };
+    expect(R.whereEq(schema, err)).toBe(true);
+  });
+
+  it('Should create a Internal Server Error (with details)', () => {
+    const msg = rnd.string(20);
+    const err = new InternalServerError(msg, [(new InternalServerError('added detail')).toJSON()]);
+    expect(err).toBeDefined();
+    expect(err).toBeInstanceOf(Error);
+    const schema = {
+      code: 'INTERNAL_SERVER_ERROR',
+      message: msg,
+      details: [(new InternalServerError('added detail')).toJSON()],
     };
     expect(R.whereEq(schema, err)).toBe(true);
   });

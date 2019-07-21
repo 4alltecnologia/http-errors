@@ -12,7 +12,7 @@ describe('Not Implemented Error tests', () => {
     expect(NotImplemented.name).toBe('NotImplemented');
   });
 
-  it('Should create a Not Implemented Error (no massage)', () => {
+  it('Should create a Not Implemented Error (no message)', () => {
     const err = new NotImplemented();
     expect(err).toBeDefined();
     expect(err).toBeInstanceOf(Error);
@@ -23,7 +23,7 @@ describe('Not Implemented Error tests', () => {
     expect(R.whereEq(schema, err)).toBe(true);
   });
 
-  it('Should create a Not Implemented Error (with massage)', () => {
+  it('Should create a Not Implemented Error (with message)', () => {
     const msg = rnd.string(20);
     const err = new NotImplemented(msg);
     expect(err).toBeDefined();
@@ -31,6 +31,33 @@ describe('Not Implemented Error tests', () => {
     const schema = {
       code: 'NOT_IMPLEMENTED',
       message: msg,
+    };
+    expect(R.whereEq(schema, err)).toBe(true);
+  });
+
+  it('Should create a Not Implemented Error (with added details)', () => {
+    const msg = rnd.string(20);
+    const err = new NotImplemented(msg);
+    err.addDetail(new NotImplemented('added detail'));
+    expect(err).toBeDefined();
+    expect(err).toBeInstanceOf(Error);
+    const schema = {
+      code: 'NOT_IMPLEMENTED',
+      message: msg,
+      details: [(new NotImplemented('added detail')).toJSON()],
+    };
+    expect(R.whereEq(schema, err)).toBe(true);
+  });
+
+  it('Should create a Not Implemented Error (with details)', () => {
+    const msg = rnd.string(20);
+    const err = new NotImplemented(msg, [(new NotImplemented('added detail')).toJSON()]);
+    expect(err).toBeDefined();
+    expect(err).toBeInstanceOf(Error);
+    const schema = {
+      code: 'NOT_IMPLEMENTED',
+      message: msg,
+      details: [(new NotImplemented('added detail')).toJSON()],
     };
     expect(R.whereEq(schema, err)).toBe(true);
   });

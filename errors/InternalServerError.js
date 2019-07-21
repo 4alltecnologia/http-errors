@@ -7,16 +7,18 @@ const CustomError = require('../CustomError');
  * @typedef {import('../CustomError')} InternalServerError
  * @param {InternalServerErrorCode} code Internal server error code
  * @param {InternalServerErrorMessage} message Internal server error message
+ * @param {import('../CustomError').ErrorDetails} details Error details
  */
 
 class InternalServerError extends CustomError {
   /**
    * Creates an Internal Server Error
    * @param {InternalServerErrorMessage} message Error message
+   * @param {import('../CustomError').ErrorDetails} details Error details
    * @returns {InternalServerError}
    */
-  constructor(message) {
-    super('INTERNAL_SERVER_ERROR', message);
+  constructor(message, details = null) {
+    super('INTERNAL_SERVER_ERROR', message, details);
   }
 }
 

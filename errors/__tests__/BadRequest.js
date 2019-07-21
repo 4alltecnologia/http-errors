@@ -12,7 +12,7 @@ describe('Bad Request Error tests', () => {
     expect(BadRequest.name).toBe('BadRequest');
   });
 
-  it('Should create a Bad Request Error (no massage)', () => {
+  it('Should create a Bad Request Error (no message)', () => {
     const err = new BadRequest();
     expect(err).toBeDefined();
     expect(err).toBeInstanceOf(Error);
@@ -23,7 +23,7 @@ describe('Bad Request Error tests', () => {
     expect(R.whereEq(schema, err)).toBe(true);
   });
 
-  it('Should create a Bad Request Error (with massage)', () => {
+  it('Should create a Bad Request Error (with message)', () => {
     const msg = rnd.string(20);
     const err = new BadRequest(msg);
     expect(err).toBeDefined();
@@ -31,6 +31,33 @@ describe('Bad Request Error tests', () => {
     const schema = {
       code: 'BAD_REQUEST',
       message: msg,
+    };
+    expect(R.whereEq(schema, err)).toBe(true);
+  });
+
+  it('Should create a Bad Request Error (with added details)', () => {
+    const msg = rnd.string(20);
+    const err = new BadRequest(msg);
+    err.addDetail(new BadRequest('added detail'));
+    expect(err).toBeDefined();
+    expect(err).toBeInstanceOf(Error);
+    const schema = {
+      code: 'BAD_REQUEST',
+      message: msg,
+      details: [(new BadRequest('added detail')).toJSON()],
+    };
+    expect(R.whereEq(schema, err)).toBe(true);
+  });
+
+  it('Should create a Bad Request Error (with details)', () => {
+    const msg = rnd.string(20);
+    const err = new BadRequest(msg, [(new BadRequest('added detail')).toJSON()]);
+    expect(err).toBeDefined();
+    expect(err).toBeInstanceOf(Error);
+    const schema = {
+      code: 'BAD_REQUEST',
+      message: msg,
+      details: [(new BadRequest('added detail')).toJSON()],
     };
     expect(R.whereEq(schema, err)).toBe(true);
   });

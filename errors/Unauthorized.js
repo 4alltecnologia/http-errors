@@ -7,16 +7,18 @@ const CustomError = require('../CustomError');
  * @typedef {import('../CustomError')} Unauthorized
  * @param {UnauthorizedErrorCode} code Internal server error code
  * @param {UnauthorizedErrorMessage} message Internal server error message
+ * @param {import('../CustomError').ErrorDetails} details Error details
  */
 
 class Unauthorized extends CustomError {
   /**
    * Creates an Internal Server Error
    * @param {UnauthorizedErrorMessage} message Error message
+   * @param {import('../CustomError').ErrorDetails} details Error details
    * @returns {Unauthorized}
    */
-  constructor(message) {
-    super('UNAUTHORIZED', message);
+  constructor(message, details = null) {
+    super('UNAUTHORIZED', message, details);
   }
 }
 

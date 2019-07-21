@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Ongoing Changes
 
 
+## [1.1.0]
+### Added
+- Added details to errors
+- Added captureStackTrace
+
 ## [1.0.5]
 ### Changed
 - Changes the way that the errors and Custom Error are exported by the `module.exports`
