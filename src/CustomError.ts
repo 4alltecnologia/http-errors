@@ -6,7 +6,13 @@ interface DetailError {
   message: string;
 }
 
-export default abstract class CustomError extends Error {
+class ExtendedError extends Error {
+  constructor(message: string) {
+    super(message);
+  }
+}
+
+export default abstract class CustomError extends ExtendedError {
   /** Error code */
   code: string;
   /** Error details */
